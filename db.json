@@ -1,0 +1,64 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Zainab Chakroun",
+      "email": "zainabChakroun@gmail.com",
+      "address": "av ziana Tetouan"
+    },
+    {
+      "id": 2,
+      "name": "Raouia Mouchni",
+      "email": "rawya@gmail.com",
+      "address": "av ziana Tetouan"
+    },
+    {
+      "id": 3,
+      "name": "Ahmed Chakroun",
+      "email": "Ahmed2@gmail.com",
+      "address": "av Far Tetouan"
+    },
+    {
+      "id": 4,
+      "name": "Maroua dini",
+      "email": "marouadini@gmail.com",
+      "address": "av Far Tetouan"
+    },
+    {
+      "id": 5,
+      "name": "Nouhaila ouardi",
+      "email": "Nouha@gmail.com",
+      "address": "av ZianaTetouan"
+    },
+    {
+      "id": 6,
+      "name": "hamza chakroun",
+      "email": "hamza12@gmail.con",
+      "address": "Boujarah Tetouan"
+    },
+    {
+      "id": 7,
+      "name": "Rabab ouzzani",
+      "email": "rababouzzani@gmail.com",
+      "address": "av ziana Tetouan"
+    },
+    {
+      "id": 8,
+      "name": "Mohamed",
+      "email": "mohamed21@gmail.com",
+      "address": "av Mehannech Tetouan"
+    },
+    {
+      "id": 9,
+      "name": "Fatema",
+      "email": "fatema@hotmail.com",
+      "address": "Av Casablanca Tetouan"
+    },
+    {
+      "id": 10,
+      "name": "asmae Benyahya",
+      "email": "benyahya.asmae@gmail.com",
+      "address": "Av chikh belarbi alaoui zkt khouloud N 10 tetouan"
+    }
+  ]
+}
