@@ -1,4 +1,17 @@
+#btnAdd{
+    margin-left: 450px;
+    margin-top: 10px;
+ }
+ nav{
+     margin-bottom: 60px;
+ }
+ 
 #btnDelete{
     margin-left: 12px;
     padding: 6px 6px 6px 6px;
+ }
+
+ #btnLogOut{
+    margin-left: 600px;
+    margin-top: -65px;
  }

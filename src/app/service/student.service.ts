@@ -12,8 +12,8 @@ export class StudentService {
 
 
   public getStudent() {
-    let myData = this.http.get<Student>(this.url)
-    return myData;
+           
+    return this.http.get<Student>(this.url);
   }
 
   addStudent(student: any) {

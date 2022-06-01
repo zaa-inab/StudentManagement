@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/service/student.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Student } from 'src/app/model/student';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -15,7 +16,7 @@ export class StudentComponent implements OnInit {
   Student: Student = new Student();
 
   constructor(private studentService: StudentService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +31,7 @@ export class StudentComponent implements OnInit {
     this.studentService.getStudent().subscribe(
       result => {
         this.studentList = result;
-        console.log(result);
+        
       }
     )
   }
@@ -41,7 +42,7 @@ export class StudentComponent implements OnInit {
     this.Student.address = this.Form.value.address;
 
     this.studentService.addStudent(this.Student).subscribe(res => {
-      alert("Employee added");
+      alert("Student added");
       let value = document.getElementById('close')
       value?.click();
       this.Form.reset();
@@ -75,7 +76,7 @@ export class StudentComponent implements OnInit {
     this.Student.address = this.Form.value.address;
 
     this.studentService.updateStudent(this.Student).subscribe(res => {
-      alert("Employee updated");
+      alert("Student updated");
       let value = document.getElementById('closeUpdate')
       value?.click();
       this.Form.reset();
@@ -85,5 +86,11 @@ export class StudentComponent implements OnInit {
         alert("Something went wrong");
       }
     )
+  }
+
+  logOut(){
+    if(confirm("are you sure you want to exit the application?")){
+        this.router.navigate(['login']);
+    }
   }
 }

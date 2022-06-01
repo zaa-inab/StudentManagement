@@ -50,15 +50,31 @@
     },
     {
       "id": 9,
-      "name": "Fatema",
+      "name": "Fatema zahrae",
       "email": "fatema@hotmail.com",
       "address": "Av Casablanca Tetouan"
     },
     {
       "id": 10,
-      "name": "asmae",
-      "email": "benyahya.asmae@gmail.com",
-      "address": "Av chikh belarbi alaoui zkt khouloud N 10 tetouan"
+      "name": "Zainab Chakroun",
+      "email": "chakroun.zainab.ismo2020@gmail.com",
+      "address": "Av chikh belarbi alaoui zkt khouloud N 10, Tétouan"
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "name": "Ismail Alaoui",
+      "username": "Ismail1234",
+      "email": "ismail1234@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "name": "Hanane ElAfi",
+      "username": "HananeAdmin",
+      "email": "Hanane@gmail.com",
+      "password": "Ha1345"
     }
   ]
 }
