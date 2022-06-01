@@ -5,8 +5,9 @@ import { Student } from '../model/student';
   providedIn: 'root'
 })
 export class StudentService {
+ 
 
-  url = 'http://localhost:7000/students';
+  url = 'http://localhost:3000/students';
   constructor(private http: HttpClient) { }
 
 
@@ -15,11 +16,15 @@ export class StudentService {
     return myData;
   }
 
-  addStudent(data: any) {
-    return this.http.post<Student>(this.url, data);
+  addStudent(student: any) {
+    return this.http.post<Student>(this.url, student);
   }
 
   deleteStudent(id: any) {
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  updateStudent(student: any){
+   return this.http.put(`${this.url}/${student.id}`,student);
   }
 }

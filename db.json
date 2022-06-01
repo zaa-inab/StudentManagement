@@ -2,7 +2,7 @@
   "students": [
     {
       "id": 1,
-      "name": "Zainab Chakroun",
+      "name": "Zainab ben yahya",
       "email": "zainabChakroun@gmail.com",
       "address": "av ziana Tetouan"
     },
@@ -14,7 +14,7 @@
     },
     {
       "id": 3,
-      "name": "Ahmed Chakroun",
+      "name": "mohammed Chakroun",
       "email": "Ahmed2@gmail.com",
       "address": "av Far Tetouan"
     },
@@ -59,6 +59,12 @@
       "name": "asmae Benyahya",
       "email": "benyahya.asmae@gmail.com",
       "address": "Av chikh belarbi alaoui zkt khouloud N 10 tetouan"
+    },
+    {
+      "id": 11,
+      "name": "Amin chakroun",
+      "email": "amin123@gmail.com",
+      "address": "av Mehannech "
     }
   ]
 }

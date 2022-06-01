@@ -11,7 +11,7 @@ import { Student } from 'src/app/model/student';
 export class StudentComponent implements OnInit {
 
   public studentList: any;
-  addForm !: FormGroup;
+  Form !: FormGroup;
   Student: Student = new Student();
 
   constructor(private studentService: StudentService,
@@ -20,7 +20,7 @@ export class StudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStudent();
-    this.addForm = this.formBuilder.group({
+    this.Form = this.formBuilder.group({
       fullName: [''],
       email: [''],
       address: ['']
@@ -35,15 +35,16 @@ export class StudentComponent implements OnInit {
     )
   }
   addStudent() {
-    this.Student.name = this.addForm.value.fullName;
-    this.Student.email = this.addForm.value.email;
-    this.Student.address = this.addForm.value.address;
+    this.Student.id=0;
+    this.Student.name = this.Form.value.fullName;
+    this.Student.email = this.Form.value.email;
+    this.Student.address = this.Form.value.address;
 
     this.studentService.addStudent(this.Student).subscribe(res => {
       alert("Employee added");
       let value = document.getElementById('close')
       value?.click();
-      this.addForm.reset();
+      this.Form.reset();
       this.getStudent();
     },
       err => {
@@ -59,5 +60,30 @@ export class StudentComponent implements OnInit {
         this.getStudent();
       })
     }
+  }
+
+  onEdit(student: any){
+    this.Student.id= student.id;
+    this.Form.controls['fullName'].setValue(student.name);
+    this.Form.controls['email'].setValue(student.email);
+    this.Form.controls['address'].setValue(student.address);
+  }
+
+  updateStudent(){
+    this.Student.name = this.Form.value.fullName;
+    this.Student.email = this.Form.value.email;
+    this.Student.address = this.Form.value.address;
+
+    this.studentService.updateStudent(this.Student).subscribe(res => {
+      alert("Employee updated");
+      let value = document.getElementById('closeUpdate')
+      value?.click();
+      this.Form.reset();
+      this.getStudent();
+    },
+      err => {
+        alert("Something went wrong");
+      }
+    )
   }
 }

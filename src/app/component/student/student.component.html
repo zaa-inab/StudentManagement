@@ -14,8 +14,9 @@
             <td>{{student.email}}</td>
             <td>{{student.address}}</td>
             <td>
-
-                <button type="button" class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal" (click)="onEdit(student)" >Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteStudent(student.id)" id="btnDelete">Delete</button>
+               
             </td>
         </tr>
 
@@ -23,16 +24,16 @@
 </table>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Student Card</h5>
+                <h5 class="modal-title" id="addModalLabel">Student Card</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="addForm">
+                <form [formGroup]="Form">
                     <div class="mb-3">
                         <label for="FullName" class="form-label">FullName</label>
                         <input type="text" formControlName="fullName" class="form-control" id="FullName">
@@ -51,7 +52,42 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
-                <button type="button" class="btn btn-primary" (click)=" addStudent()">Save</button>
+                <button type="button" class="btn btn-primary" (click)=" addStudent()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- edit Modal -->
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Student Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="Form">
+                    <div class="mb-3">
+                        <label for="FullName" class="form-label">FullName</label>
+                        <input type="text" formControlName="fullName" class="form-control" id="FullName">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" formControlName="email" class="form-control" id="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Address" class="form-label">Address</label>
+                        <input type="text" formControlName="address" class="form-control" id="Address">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeUpdate">Close</button>
+                <button type="button" class="btn btn-primary" (click)="updateStudent()">Update</button>
             </div>
         </div>
     </div>
