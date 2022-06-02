@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Admin } from 'src/app/model/admin';
 import { AdminService } from 'src/app/service/admin.service';
@@ -18,12 +18,16 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm=this.formBuilder.group({
-      fullname:[''],
-      username:[''],
-      email:[''],
-      password:[''],
-      confirmPassword:['']
-    })
+      fullname:['',Validators.required],
+      username:['',Validators.required],
+      email:['',Validators.required],
+      password:['',Validators.required],
+      confirmPassword:['',Validators.required]
+    },
+    {validators: this.confirmValidator('password','confirmPassword')
+  }
+
+    )
   }
 
   addAdmin(){
@@ -42,5 +46,39 @@ export class SignUpComponent implements OnInit {
             alert('Something Went Wrong');
            }
        )
+  }
+
+  confirmValidator(control:string , confirmControl:string){
+  return (formGroup:FormGroup)=>{
+    const cont= formGroup.controls[control];
+    const confirm= formGroup.controls[confirmControl];
+
+if(cont.value !== confirm.value){
+  confirm.setErrors({confirmValidator:true});
+}
+else{
+  confirm.setErrors(null);
+}
+  }
+  }
+
+  get fullname(){
+    return this.signUpForm.get('fullname');
+  }
+  
+  get username(){
+    return this.signUpForm.get('username');
+  }
+
+  get email(){
+    return this.signUpForm.get('email');
+  }
+
+  get password(){
+    return this.signUpForm.get('password');
+  }
+
+  get confirmPassword(){
+    return this.signUpForm.get('confirmPassword');
   }
 }

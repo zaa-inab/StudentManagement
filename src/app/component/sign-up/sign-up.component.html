@@ -10,36 +10,62 @@
                         <div class="mb-3">
 
                             <input type="text" formControlName="fullname" class="form-control" id="fullname"
-                                placeholder="Fullname">
+                                placeholder="Fullname" pattern="^[a-zA-Z ]{1,30}$" maxlength="30">
+                            <div *ngIf="fullname.touched && fullname.invalid">
+                                <small class="text-danger" *ngIf="fullname.errors?.['required']"> Full name is
+                                    required.</small>
+                                <small class="text-danger" *ngIf="fullname.errors?.['pattern']"> Full name must contain
+                                    only letters</small>
+                            </div>
 
                         </div>
 
                         <div class="mb-3">
 
                             <input type="text" formControlName="username" class="form-control" id="username"
-                                placeholder="Username">
+                                placeholder="Username" pattern="^[a-zA-Z0-9_-]{1,8}$" maxlength="8">
 
-
+                            <div *ngIf="username.touched && username.invalid">
+                                <small class="text-danger" *ngIf="username.errors?.['required']"> Username is
+                                    required.</small>
+                                <small class="text-danger" *ngIf="username.errors?.['pattern']"> Invalid Username. a
+                                    valid user name example : zaa_inab</small>
+                            </div>
 
                         </div>
                         <div class="mb-3">
 
                             <input type="email" formControlName="email" class="form-control" id="email"
-                                placeholder="Email">
-
+                                placeholder="Email" pattern="^[a-zA-Z-0-9._]+@[a-zA-Z-]+\.[a-zA-Z]{2,6}$">
+                            <div *ngIf="email.touched && email.invalid">
+                                <small class="text-danger" *ngIf="email.errors?.['required']"> Username is
+                                    required.</small>
+                                <small class="text-danger" *ngIf="email.errors?.['pattern']"> Invalid Email. example :
+                                    zainabCh@gmail.com</small>
+                            </div>
                         </div>
                         <div class="mb-3">
 
                             <input type="password" formControlName="password" class="form-control" id="password"
-                                placeholder="Password">
-
+                                placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                            <div *ngIf="password.touched && password.invalid">
+                                <small class="text-danger" *ngIf="password.errors?.['required']"> Please confirm your
+                                    password.</small>
+                                <small class="text-danger" *ngIf="password.errors?.['pattern']"> Password must contain
+                                    mininum 8 characters, at least one letter and one number.</small>
+                            </div>
                         </div>
-
                         <div class="mb-3">
 
                             <input type="password" formControlName="confirmPassword" class="form-control"
                                 id="confirmPassword" placeholder="Confirm Password">
-
+                            <div *ngIf="confirmPassword.touched && confirmPassword.invalid">
+                                <small class="text-danger" *ngIf="confirmPassword.errors?.['required']"> Please confirm
+                                    your password.</small>
+                                <small class="text-danger" *ngIf="confirmPassword.errors?.['confirmValidator']">Password
+                                    and
+                                    Confirm Password must be match.</small>
+                            </div>
                         </div>
 
                         <div class="mb-3">
