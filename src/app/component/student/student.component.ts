@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/service/student.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
 import { Student } from 'src/app/model/student';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class StudentComponent implements OnInit {
 
   public studentList: any;
-  Form !: FormGroup;
+  Form: FormGroup;
   Student: Student = new Student();
 
   constructor(private studentService: StudentService,
@@ -92,5 +92,17 @@ export class StudentComponent implements OnInit {
     if(confirm("are you sure you want to exit the application?")){
         this.router.navigate(['login']);
     }
+  }
+
+  get fullname(){
+    return this.Form.get('fullName');
+  }
+
+  get email(){
+    return this.Form.get('email');
+  }
+
+  get address(){
+    return this.Form.get('address');
   }
 }

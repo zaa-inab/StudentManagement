@@ -56,23 +56,29 @@
                 <form [formGroup]="Form">
                     <div class="mb-3">
                         <label for="FullName" class="form-label">FullName</label>
-                        <input type="text" formControlName="fullName" class="form-control" id="FullName">
-
+                        <input type="text" formControlName="fullName" class="form-control" id="FullName" required>
+                        <small class="text-danger" *ngIf="fullname.touched"> Fullname is required</small>
                     </div>
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" formControlName="email" class="form-control" id="Email">
+                        <input type="email" formControlName="email" class="form-control" id="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <div *ngIf="email.touched && email.invalid" >
+                        <small class="text-danger" *ngIf="email.errors?.['required']"> Email is required</small>
+                        <small class="text-danger" *ngIf="email.errors?.['pattern']"> Email is invalid</small>
+                    </div>
+                        
                     </div>
                     <div class="mb-3">
                         <label for="Address" class="form-label">Address</label>
-                        <input type="text" formControlName="address" class="form-control" id="Address">
+                        <input type="text" formControlName="address" class="form-control" id="Address" required>
+                        <small class="text-danger" *ngIf="address.touched"> Address is required</small>
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
-                <button type="button" class="btn btn-primary" (click)=" addStudent()">Add</button>
+                <button type="button" class="btn btn-primary" [disabled]="!Form.valid" (click)=" addStudent()">Add</button>
             </div>
         </div>
     </div>
@@ -91,23 +97,34 @@
                 <form [formGroup]="Form">
                     <div class="mb-3">
                         <label for="FullName" class="form-label">FullName</label>
-                        <input type="text" formControlName="fullName" class="form-control" id="FullName">
-
+                        <input type="text" formControlName="fullName" class="form-control" id="FullName" required>
+                        <small class="text-danger" *ngIf="fullname.touched">
+                            FullName is required </small>
                     </div>
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" formControlName="email" class="form-control" id="Email">
+                        <input type="email" formControlName="email" class="form-control" id="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div  *ngIf="email.touched && email.invalid">
+                            <small class="text-danger" *ngIf="email.errors?.['required']">
+                                Email is required </small>
+
+                                <small class="text-danger" *ngIf="email.errors?.['pattern']">
+                                    Email is invalid </small>
+                           </div>
+                     
                     </div>
                     <div class="mb-3">
                         <label for="Address" class="form-label">Address</label>
-                        <input type="text" formControlName="address" class="form-control" id="Address">
+                        <input type="text" formControlName="address" class="form-control" id="Address" required>
+                        <small class="text-danger" *ngIf="address.touched">
+                            Address is required </small>
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeUpdate">Close</button>
-                <button type="button" class="btn btn-primary" (click)="updateStudent()">Update</button>
+                <button type="button" class="btn btn-primary"  [disabled]="!Form.valid" (click)="updateStudent()" >Update</button>
             </div>
         </div>
     </div>

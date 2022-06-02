@@ -2,9 +2,9 @@
   "students": [
     {
       "id": 1,
-      "name": "Zainab ben yahya",
-      "email": "zainabChakroun@gmail.com",
-      "address": "av ziana Tetouan"
+      "name": "Zainab Chakroun",
+      "email": "zainabChakroungmail.com",
+      "address": "Av chikh belarbi alaoui zkt khouloud N 10, Tétouan"
     },
     {
       "id": 2,
@@ -34,7 +34,7 @@
       "id": 6,
       "name": "hamza chakroun",
       "email": "hamza12@gmail.con",
-      "address": "Boujarah Tetouan"
+      "address": "Av chikh belarbi alaoui zkt khouloud N 10 tetouan"
     },
     {
       "id": 7,
