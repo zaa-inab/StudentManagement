@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Create Account</h1>
+
+                    <form [formGroup]="signUpForm" (ngSubmit)="addAdmin()">
+
+                        <div class="mb-3">
+
+                            <input type="text" formControlName="fullname" class="form-control" id="fullname"
+                                placeholder="Fullname">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <input type="text" formControlName="username" class="form-control" id="username"
+                                placeholder="Username">
+
+
+
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="email" formControlName="email" class="form-control" id="email"
+                                placeholder="Email">
+
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="password" formControlName="password" class="form-control" id="password"
+                                placeholder="Password">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <input type="password" formControlName="confirmPassword" class="form-control"
+                                id="confirmPassword" placeholder="Confirm Password">
+
+                        </div>
+
+                        <div class="mb-3">
+                            <small class="text-center"> Already an admin? </small>
+                            <a [routerLink]="['/login']"> Log In</a>
+                        </div>
+
+                        <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-primary">Sign Up </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

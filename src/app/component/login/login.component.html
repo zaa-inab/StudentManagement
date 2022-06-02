@@ -8,7 +8,7 @@
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="text" formControlName="username" class="form-control" id="username"><br>
+              <input type="text" formControlName="username" class="form-control" id="username">
               <small class="text-danger" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid">
                 Username is required </small>
 
@@ -16,13 +16,19 @@
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" formControlName="password" class="form-control" id="password"><br>
+              <input type="password" formControlName="password" class="form-control" id="password">
               <small class="text-danger"
                 *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">Password is
                 required</small>
             </div>
 
             <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Log In </button>
+    
+            <br>
+            <div class="mb-3">
+              <small class="text-center"> Not an admin?    </small>
+              <a [routerLink]="['/signUp']"  > Create Account</a>
+              </div>
           </form>
         </div>
       </div>

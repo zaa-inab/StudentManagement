@@ -1,23 +1,24 @@
-
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Students Management Application</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" id="btnAdd">Add student</button>
-              <button type="button" class="btn btn-dark" (click)="logOut()" id="btnLogOut">Log Out</button>
-             </li>
-          </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Students Management Application</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal"
+                            id="btnAdd">Add student</button>
+                        <button type="button" class="btn btn-dark" (click)="logOut()" id="btnLogOut">Log Out</button>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-  
-  </div>
+
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -34,9 +35,11 @@
             <td>{{student.email}}</td>
             <td>{{student.address}}</td>
             <td>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal" (click)="onEdit(student)" >Edit</button>
-                <button type="button" class="btn btn-danger" (click)="deleteStudent(student.id)" id="btnDelete">Delete</button>
-               
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"
+                    (click)="onEdit(student)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteStudent(student.id)"
+                    id="btnDelete">Delete</button>
+
             </td>
         </tr>
 
@@ -61,12 +64,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" formControlName="email" class="form-control" id="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                    <div *ngIf="email.touched && email.invalid" >
-                        <small class="text-danger" *ngIf="email.errors?.['required']"> Email is required</small>
-                        <small class="text-danger" *ngIf="email.errors?.['pattern']"> Email is invalid</small>
-                    </div>
-                        
+                        <input type="email" formControlName="email" class="form-control" id="Email" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div *ngIf="email.touched && email.invalid">
+                            <small class="text-danger" *ngIf="email.errors?.['required']"> Email is required</small>
+                            <small class="text-danger" *ngIf="email.errors?.['pattern']"> Email is invalid</small>
+                        </div>
+
                     </div>
                     <div class="mb-3">
                         <label for="Address" class="form-label">Address</label>
@@ -78,7 +82,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
-                <button type="button" class="btn btn-primary" [disabled]="!Form.valid" (click)=" addStudent()">Add</button>
+                <button type="button" class="btn btn-primary" [disabled]="!Form.valid"
+                    (click)=" addStudent()">Add</button>
             </div>
         </div>
     </div>
@@ -103,15 +108,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" formControlName="email" class="form-control" id="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                        <div  *ngIf="email.touched && email.invalid">
+                        <input type="email" formControlName="email" class="form-control" id="Email" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div *ngIf="email.touched && email.invalid">
                             <small class="text-danger" *ngIf="email.errors?.['required']">
                                 Email is required </small>
 
-                                <small class="text-danger" *ngIf="email.errors?.['pattern']">
-                                    Email is invalid </small>
-                           </div>
-                     
+                            <small class="text-danger" *ngIf="email.errors?.['pattern']">
+                                Email is invalid </small>
+                        </div>
+
                     </div>
                     <div class="mb-3">
                         <label for="Address" class="form-label">Address</label>
@@ -124,7 +130,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeUpdate">Close</button>
-                <button type="button" class="btn btn-primary"  [disabled]="!Form.valid" (click)="updateStudent()" >Update</button>
+                <button type="button" class="btn btn-primary" [disabled]="!Form.valid"
+                    (click)="updateStudent()">Update</button>
             </div>
         </div>
     </div>

@@ -75,6 +75,13 @@
       "username": "HananeAdmin",
       "email": "Hanane@gmail.com",
       "password": "Ha1345"
+    },
+    {
+      "id": 3,
+      "name": "Alae Benyahya",
+      "username": "@alae12",
+      "email": "alae123@gmail.com",
+      "password": "A1234"
     }
   ]
 }

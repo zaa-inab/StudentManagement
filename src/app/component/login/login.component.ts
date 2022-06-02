@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
 
    loginForm: FormGroup;
 
-  constructor( private formBuilder: FormBuilder ,private adminService: AdminService, private router : Router) { }
+  constructor( private formBuilder: FormBuilder ,private adminService: AdminService, private router : Router) 
+  { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -43,7 +44,5 @@ export class LoginComponent implements OnInit {
      )
   }
 
-  // get username(){
-  //   return this.loginForm.get('loginForm');
-  // }
+ 
 }
