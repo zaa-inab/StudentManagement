@@ -14,6 +14,7 @@ export class StudentComponent implements OnInit {
   public studentList: any;
   Form: FormGroup;
   Student: Student = new Student();
+  p: number = 1;
 
   constructor(private studentService: StudentService,
     private formBuilder: FormBuilder,private router : Router

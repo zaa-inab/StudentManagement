@@ -29,7 +29,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of studentList">
+        <tr *ngFor="let student of studentList | paginate: {itemsPerPage: 5, currentPage: p}">
             <td>{{student.id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.email}}</td>
@@ -43,9 +43,13 @@
             </td>
         </tr>
 
-    </tbody>
-</table>
 
+    </tbody>
+   
+</table>
+<div id="paginate">
+<pagination-controls (pageChange)= "p = $event"></pagination-controls>
+</div>
 
 <!-- add Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">

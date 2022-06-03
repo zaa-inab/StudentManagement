@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { StudentComponent } from './component/student/student.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -23,7 +24,8 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
