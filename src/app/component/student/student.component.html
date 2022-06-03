@@ -19,11 +19,20 @@
     </nav>
 
 </div>
+
+
+    <div class="searchGroup">
+      <input class="form-control mr-sm-2" type="search" id="search" placeholder="Enter a name to search" name="name" [(ngModel)]="name" (ngModelChange)="search()" >
+     
+    </div>
+  
+
+
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Fullname</th>
+            <th scope="col">Full Name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
         </tr>
@@ -62,7 +71,7 @@
             <div class="modal-body">
                 <form [formGroup]="Form">
                     <div class="mb-3">
-                        <label for="FullName" class="form-label">FullName</label>
+                        <label for="FullName" class="form-label">Full Name</label>
                         <input type="text" formControlName="fullName" class="form-control" id="FullName" required>
                         <small class="text-danger" *ngIf="fullname.touched"> Fullname is required</small>
                     </div>

@@ -1,3 +1,4 @@
+
 #btnAdd{
     margin-left: 450px;
     margin-top: 10px;
@@ -20,4 +21,15 @@
     margin-left: 500px; 
     margin-top: 40px;
  }
+
+ #search{
+     margin-left: 400px ;
+     width: 40%;
+     position: absolute;
+ 
+ }
+
+.searchGroup{
+    margin-bottom: 150px;
+}
  

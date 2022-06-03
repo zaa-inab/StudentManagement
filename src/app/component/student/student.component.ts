@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/service/student.service';
-import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 import { Student } from 'src/app/model/student';
 import { Router } from '@angular/router';
 
@@ -15,6 +15,7 @@ export class StudentComponent implements OnInit {
   Form: FormGroup;
   Student: Student = new Student();
   p: number = 1;
+  name: String;
 
   constructor(private studentService: StudentService,
     private formBuilder: FormBuilder,private router : Router
@@ -32,7 +33,7 @@ export class StudentComponent implements OnInit {
     this.studentService.getStudent().subscribe(
       result => {
         this.studentList = result;
-        
+        console.log(this.studentList);
       }
     )
   }
@@ -113,4 +114,18 @@ export class StudentComponent implements OnInit {
   get address(){
     return this.Form.get('address');
   }
+   
+  search(){
+    if(this.name == ""){
+           this.getStudent();
+    }
+    else{
+      this.studentList= this.studentList.filter(
+        res=>{
+          return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+        }
+      );
+    }
+  }
+
 }
