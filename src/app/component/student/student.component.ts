@@ -15,7 +15,9 @@ export class StudentComponent implements OnInit {
   Form: FormGroup;
   Student: Student = new Student();
   p: number = 1;
-  name: String;
+  name: string;
+  key:string ;
+  reverse:boolean =false;
 
   constructor(private studentService: StudentService,
     private formBuilder: FormBuilder,private router : Router
@@ -33,7 +35,7 @@ export class StudentComponent implements OnInit {
     this.studentService.getStudent().subscribe(
       result => {
         this.studentList = result;
-        console.log(this.studentList);
+        
       }
     )
   }
@@ -127,5 +129,8 @@ export class StudentComponent implements OnInit {
       );
     }
   }
-
+ sort(key){
+   this.key=key;
+   this.reverse =!this.reverse;
+ }
 }

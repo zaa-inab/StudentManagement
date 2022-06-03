@@ -10,7 +10,8 @@ import { LoginComponent } from './component/login/login.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    Ng2OrderModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

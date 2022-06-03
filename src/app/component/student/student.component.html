@@ -22,8 +22,9 @@
 
 
     <div class="searchGroup">
+       
       <input class="form-control mr-sm-2" type="search" id="search" placeholder="Enter a name to search" name="name" [(ngModel)]="name" (ngModelChange)="search()" >
-     
+    
     </div>
   
 
@@ -31,14 +32,14 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Full Name</th>
+            <th scope="col" (click)="sort('id')">Id &nbsp; <i class="fa fa-sort"></i></th>
+            <th scope="col" (click)="sort('fullName')">Full Name &nbsp; <i class="fa fa-sort"></i></th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of studentList | paginate: {itemsPerPage: 5, currentPage: p}">
+        <tr *ngFor="let student of studentList | paginate: {itemsPerPage: 5, currentPage: p} | orderBy : key : reverse">
             <td>{{student.id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.email}}</td>
