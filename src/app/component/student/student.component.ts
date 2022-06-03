@@ -36,7 +36,13 @@ export class StudentComponent implements OnInit {
       }
     )
   }
+
+  prepareAdd(){
+  this.Form.reset();
+  }
+
   addStudent() {
+   
     this.Student.id=0;
     this.Student.name = this.Form.value.fullName;
     this.Student.email = this.Form.value.email;
@@ -69,6 +75,7 @@ export class StudentComponent implements OnInit {
     this.Form.controls['fullName'].setValue(student.name);
     this.Form.controls['email'].setValue(student.email);
     this.Form.controls['address'].setValue(student.address);
+
   }
 
   updateStudent(){

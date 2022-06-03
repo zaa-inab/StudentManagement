@@ -59,6 +59,12 @@
       "name": "Zainab Chakroun",
       "email": "chakroun.zainab.ismo2020@gmail.com",
       "address": "Av chikh belarbi alaoui zkt khouloud N 10, Tétouan"
+    },
+    {
+      "id": 11,
+      "name": "Zainab Chakroun",
+      "email": "chakroun.zainab.ismo2020@gmail.com",
+      "address": "Av chikh belarbi alaoui zkt khouloud N 10, Tétouan"
     }
   ],
   "admin": [
@@ -83,6 +89,5 @@
       "email": "alae123@gmail.com",
       "password": "A1234"
     }
-   
   ]
 }
