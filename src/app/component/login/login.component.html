@@ -21,8 +21,12 @@
                 *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">Password is
                 required</small>
             </div>
+            <!-- <div class="mb-3">
+            <input type="checkbox" class="btn-check" id="btncheck" autocomplete="off">
+             <label  for="btncheck" formControlName="remember" isChecked>Remember me</label>
+</div> -->
 
-            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Log In </button>
+            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary" >Log In </button>
     
             <br>
             <div class="mb-3">

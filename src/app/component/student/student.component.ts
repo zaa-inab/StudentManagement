@@ -3,6 +3,11 @@ import { StudentService } from 'src/app/service/student.service';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import { Student } from 'src/app/model/student';
 import { Router } from '@angular/router';
+import { Admin } from 'src/app/model/admin';
+import { AuthService } from 'src/app/service/auth.service';
+import {  
+  CookieService  
+} from 'ngx-cookie-service';  
 
 @Component({
   selector: 'app-student',
@@ -18,10 +23,12 @@ export class StudentComponent implements OnInit {
   name: string;
   key:string ='id';
   reverse:boolean =false;
-
+ 
   constructor(private studentService: StudentService,
     private formBuilder: FormBuilder,private router : Router
-  ) { }
+  ) { 
+   
+  }
 
   ngOnInit(): void {
     this.getStudent();
