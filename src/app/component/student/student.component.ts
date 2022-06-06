@@ -16,7 +16,7 @@ export class StudentComponent implements OnInit {
   Student: Student = new Student();
   p: number = 1;
   name: string;
-  key:string ;
+  key:string ='id';
   reverse:boolean =false;
 
   constructor(private studentService: StudentService,
