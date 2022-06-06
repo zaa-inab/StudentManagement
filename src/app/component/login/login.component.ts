@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
          });
          if (user){
            alert('Login success');
+           localStorage.setItem('token','jkj');
            this.router.navigate(['students']);
+         
          }else{
           alert('username or password incorrect!');
          }
